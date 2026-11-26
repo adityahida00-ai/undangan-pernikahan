@@ -1,0 +1,274 @@
+:root {
+  --bg-page: #e5dfd5;
+  --bg-cream: #faf6f0;
+  --primary: #7c5e3c;
+  --primary-hover: #5e452a;
+  --text-main: #332a21;
+  --text-muted: #6e6256;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* SAMPUL FULL LAYAR HP */
+.cover {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  background: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 24px;
+  z-index: 999;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 18, 12, 0.68);
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 380px;
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  opacity: 0.9;
+}
+
+.couple-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  color: #f3dec6;
+  margin: 6px 0;
+}
+
+.wedding-date {
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.guest-card {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.guest-card h3 {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+/* TOMBOL */
+.btn-main {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn-main:active {
+  transform: scale(0.97);
+  background: var(--primary-hover);
+}
+
+.btn-copy {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* KONTAINER UTAMA LAYAR HP */
+.mobile-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg-cream);
+  min-height: 100dvh;
+  box-shadow: 0 0 25px rgba(0,0,0,0.08);
+}
+
+.section {
+  padding: 44px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e8dfd1;
+}
+
+.arabic-salam, .section-heading, .couple-name {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--primary);
+}
+
+.arabic-salam { font-size: 1.6rem; margin-bottom: 8px; }
+.section-heading { font-size: 2.1rem; margin-bottom: 18px; }
+.couple-name { font-size: 1.85rem; margin: 6px 0; }
+.text-muted { font-size: 0.9rem; color: var(--text-muted); }
+
+/* PROFIL */
+.profile-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d4bea2;
+  background-color: #e6dac8;
+}
+
+.dan {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin: 12px 0;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.cd-item {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 4px;
+  border-radius: 10px;
+}
+
+.cd-item span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.cd-item small { font-size: 0.75rem; }
+
+/* CARD ACARA & REKENING */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.bank-title { font-weight: 600; color: var(--primary); }
+.rek-number { font-size: 1.35rem; font-weight: 600; margin: 4px 0; }
+
+/* FORM RSVP */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5c7b4;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.92rem;
+}
+
+.ucapan-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ucapan-item {
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary);
+}
+
+.ucapan-item small {
+  background: #efe6d8;
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  margin-left: 6px;
+}
+
+/* TOMBOL MUSIK MELAYANG */
+@keyframes putar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.music-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: 2px solid #f3dec6;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 90;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.spinning {
+  animation: putar 6s linear infinite;
+}
+
+.footer {
+  padding: 36px 20px;
+  text-align: center;
+  background: #efe7db;
+}

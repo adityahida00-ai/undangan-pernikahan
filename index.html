@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- GANTI JUDUL TAB -->
+  <title>Undangan Pernikahan - Raka & Nadia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LAYAR SAMPUL (FULL LAYAR HP) -->
+  <section id="cover" class="cover">
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <p class="subtitle">THE WEDDING OF</p>
+      <!-- GANTI NAMA PANGGILAN PENGANTIN -->
+      <h1 class="couple-title">Raka &amp; Nadia</h1>
+      <p class="wedding-date">Minggu, 20 Desember 2026</p>
+
+      <div class="guest-card">
+        <small>Kepada Yth. Bapak/Ibu/Saudara/i:</small>
+        <h3 id="guest-name">Tamu Undangan</h3>
+      </div>
+
+      <button class="btn-main" onclick="bukaUndangan()">
+        &#9993; Buka Undangan
+      </button>
+    </div>
+  </section>
+
+  <!-- KONTEN UTAMA UNDANGAN -->
+  <main id="main-content" class="mobile-container hidden">
+
+    <!-- AUDIO BACKSOUND -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/musik.mp3" type="audio/mpeg">
+      <source src="assets/musik.wav" type="audio/wav">
+    </audio>
+    <button id="music-btn" class="music-float" onclick="toggleMusic()" aria-label="Kontrol Musik">
+      &#127925;
+    </button>
+
+    <!-- PEMBUKA -->
+    <section class="section">
+      <h2 class="arabic-salam">Assalamu’alaikum Wr. Wb.</h2>
+      <p class="text-muted">
+        Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan putra-putri kami:
+      </p>
+    </section>
+
+    <!-- PROFIL PENGANTIN -->
+    <section class="section">
+      <div class="profile-box">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Mempelai Pria">
+        <!-- GANTI NAMA MEMPELAI PRIA & ORANG TUA -->
+        <h2 class="couple-name">Raka Pratama, S.Kom.</h2>
+        <p class="text-muted">Putra Pertama dari<br><strong>Bpk. Hendra Wijaya &amp; Ibu Siti Aminah</strong></p>
+      </div>
+
+      <div class="dan">&amp;</div>
+
+      <div class="profile-box">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Mempelai Wanita">
+        <!-- GANTI NAMA MEMPELAI WANITA & ORANG TUA -->
+        <h2 class="couple-name">Nadia Putri Lestari, S.E.</h2>
+        <p class="text-muted">Putri Kedua dari<br><strong>Bpk. Ahmad Fauzi &amp; Ibu Ratna Dewi</strong></p>
+      </div>
+    </section>
+
+    <!-- HITUNG MUNDUR -->
+    <section class="section">
+      <h2 class="section-heading">Menuju Hari Bahagia</h2>
+      <div class="countdown">
+        <div class="cd-item"><span id="days">00</span><small>Hari</small></div>
+        <div class="cd-item"><span id="hours">00</span><small>Jam</small></div>
+        <div class="cd-item"><span id="minutes">00</span><small>Menit</small></div>
+        <div class="cd-item"><span id="seconds">00</span><small>Detik</small></div>
+      </div>
+    </section>
+
+    <!-- DETAIL ACARA -->
+    <section class="section">
+      <h2 class="section-heading">Waktu &amp; Lokasi</h2>
+
+      <div class="card">
+        <h3>Akad Nikah</h3>
+        <p><strong>Minggu, 20 Desember 2026</strong></p>
+        <p class="text-muted">Pukul 08.00 – 10.00 WIB</p>
+        <p>Masjid Agung Al-Istiqomah</p>
+      </div>
+
+      <div class="card">
+        <h3>Resepsi</h3>
+        <p><strong>Minggu, 20 Desember 2026</strong></p>
+        <p class="text-muted">Pukul 11.00 – 14.00 WIB</p>
+        <p>Gedung Serbaguna Grand Ballroom</p>
+      </div>
+
+      <!-- GANTI LINK GOOGLE MAPS -->
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-main">
+        &#128205; Lihat Lokasi di Maps
+      </a>
+    </section>
+
+    <!-- AMPLOP DIGITAL -->
+    <section class="section">
+      <h2 class="section-heading">Amplop Digital</h2>
+      <p class="text-muted">Bagi yang ingin memberikan tanda kasih secara digital dapat melalui rekening berikut:</p>
+
+      <div class="card">
+        <p class="bank-title">BANK BCA</p>
+        <p class="rek-number">1234567890</p>
+        <p class="text-muted">a.n. Raka Pratama</p>
+        <button class="btn-copy" onclick="salinTeks('1234567890', this)">Salin Rekening</button>
+      </div>
+    </section>
+
+    <!-- RSVP & UCAPAN -->
+    <section class="section">
+      <h2 class="section-heading">Ucapan &amp; Kehadiran</h2>
+      <form id="rsvp-form" onsubmit="tambahUcapan(event)">
+        <input type="text" id="nama" placeholder="Nama Anda" required>
+        <select id="kehadiran" required>
+          <option value="">-- Konfirmasi Kehadiran --</option>
+          <option value="Hadir">InsyaAllah Hadir</option>
+          <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+        </select>
+        <textarea id="pesan" rows="3" placeholder="Tulis doa dan ucapan..." required></textarea>
+        <button type="submit" class="btn-main">Kirim Ucapan</button>
+      </form>
+
+      <div id="list-ucapan" class="ucapan-list"></div>
+    </section>
+
+    <!-- PENUTUP -->
+    <footer class="footer">
+      <p class="text-muted">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+      <!-- GANTI NAMA PENGANTIN DI PENUTUP -->
+      <h3 class="couple-name">Raka &amp; Nadia</h3>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
